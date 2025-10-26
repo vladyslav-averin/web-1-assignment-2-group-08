@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>VIA Connect - Create Account</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <h1>Join VIA Connect</h1>
+        <p class="subtitle">Let's create your student profile</p>
+      </header>
+
+      <form action="#">
+        <!-- Full name -->
+        <div class="form-group">
+          <label for="fullname">Full name</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="e.g. John Doe"
+            autocomplete="name"
+            required
+            minlength="3"
+            pattern="^[A-Za-z]+([ '-][A-Za-z]+)+$"
+            title="Please enter at least first and last name (English letters only)"
+          />
+        </div>
+
+        <!-- VIA Email -->
+        <div class="form-group">
+          <label for="email">VIA Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="e.g. 363116@via.dk"
+            autocomplete="email"
+            required
+            pattern="^[0-9]{3,10}@via\.dk$"
+            title="Email must be digits followed by @via.dk (e.g. 363116@via.dk)"
+          />
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+45 53 68 41 21"
+            autocomplete="tel"
+            required
+            pattern="^\+?[0-9\s\-()]{7,20}$"
+            title="Enter a valid phone number (7–20 digits, may include +, spaces, -, or parentheses)"
+          />
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            autocomplete="new-password"
+            required
+            minlength="8"
+            pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$"
+            aria-describedby="password-hint"
+            title="At least 8 characters, one uppercase, one lowercase, and one number"
+          />
+          <span class="hint" id="password-hint"
+            >At least 8 characters, 1 uppercase, 1 lowercase, 1 number</span
+          >
+        </div>
+
+        <!-- Confirm password -->
+        <div class="form-group">
+          <label for="confirm">Confirm password</label>
+          <input
+            type="password"
+            id="confirm"
+            name="confirm-password"
+            placeholder="Re-enter your password"
+            autocomplete="new-password"
+            required
+            minlength="8"
+            title="Re-enter the same password"
+          />
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input
+            type="date"
+            id="dob"
+            name="dob"
+            required
+            min="1924-01-01"
+            max="2007-12-31"
+            aria-describedby="dob-hint"
+            title="Enter your date of birth (18-100 years old)"
+          />
+          <span class="hint" id="dob-hint">You must be 18 years or older</span>
+        </div>
+
+        <!-- Study Program -->
+        <div class="form-group">
+          <label for="program">Study Program</label>
+          <select id="program" name="program" required>
+            <option value="" disabled selected>Select</option>
+            <option value="software-engineering">
+              Software Technology Engineering
+            </option>
+            <option value="design">Graphic Storytelling</option>
+            <option value="marketing">Character Animation</option>
+          </select>
+        </div>
+
+        <!-- Campus Location -->
+        <fieldset class="form-group campus-group">
+          <legend>Campus Location</legend>
+          <div class="radio-group">
+            <label class="radio-label">
+              <input
+                type="radio"
+                name="campus"
+                value="horsens"
+                id="campus-horsens"
+                required
+              />
+              <span>Horsens</span>
+            </label>
+            <label class="radio-label">
+              <input
+                type="radio"
+                name="campus"
+                value="aarhus"
+                id="campus-aarhus"
+              />
+              <span>Aarhus</span>
+            </label>
+            <label class="radio-label">
+              <input
+                type="radio"
+                name="campus"
+                value="other"
+                id="campus-other"
+              />
+              <span>Other</span>
+            </label>
+          </div>
+
+          <input
+            type="text"
+            id="other-campus"
+            name="other-campus"
+            class="other-campus-input"
+            placeholder="e.g. Herning"
+            pattern="^[A-Za-z\s'-]{2,}$"
+            aria-label="Other campus location"
+            title="Enter your campus city or location"
+          />
+        </fieldset>
+
+        <!-- Activity Interests -->
+        <fieldset class="form-group">
+          <legend>
+            Activity Interests
+            <span class="optional">(select all that apply)</span>
+          </legend>
+          <div class="checkbox-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="interests" value="sports" />
+              <span>Sports</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="interests" value="travel" />
+              <span>Travel</span>
+            </label>
+            <label class="checkbox-label">
+              <input type="checkbox" name="interests" value="other" />
+              <span>Other</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- How social are you? -->
+        <div class="form-group">
+          <label for="sociability">How social are you?</label>
+          <div class="range-container">
+            <div class="range-wrapper">
+              <input
+                type="range"
+                id="sociability"
+                name="sociability"
+                min="1"
+                max="5"
+                value="3"
+                aria-valuemin="1"
+                aria-valuemax="5"
+                aria-valuenow="3"
+                aria-describedby="sociability-hint"
+              />
+              <div class="range-values" aria-hidden="true">
+                <span>1</span>
+                <span>2</span>
+                <span>3</span>
+                <span>4</span>
+                <span>5</span>
+              </div>
+            </div>
+          </div>
+          <span class="hint" id="sociability-hint"
+            >1 = Introvert, 5 = Extrovert</span
+          >
+        </div>
+
+        <!-- Short Bio -->
+        <div class="form-group">
+          <label for="bio">
+            Short Bio <span class="optional">(optional)</span>
+          </label>
+          <textarea
+            id="bio"
+            name="bio"
+            placeholder="Tell us about yourself..."
+            maxlength="300"
+            aria-describedby="bio-hint"
+          ></textarea>
+          <span class="hint" id="bio-hint">Maximum 300 characters</span>
+        </div>
+
+        <!-- Upload photo -->
+        <div class="form-group">
+          <label for="photo">
+            Upload photo <span class="optional">(optional)</span>
+          </label>
+          <input
+            type="file"
+            id="photo"
+            name="photo"
+            accept=".jpg,.jpeg,.png,.heic"
+            aria-describedby="photo-hint"
+            title="Upload a JPG, PNG, or HEIC image (max 5 MB)"
+          />
+          <span class="hint" id="photo-hint">JPG, PNG, HEIC (max 5 MB)</span>
+        </div>
+
+        <!-- Terms & Conditions -->
+        <div class="form-group">
+          <label class="checkbox-label terms-checkbox">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              required
+              title="You must agree to the Terms & Conditions"
+            />
+            <span>
+              I agree to the
+              <a href="#" class="terms-link">Terms & Conditions</a>
+            </span>
+          </label>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="submit-btn">Create Account</button>
+      </form>
+    </div>
+  </body>
+</html>
