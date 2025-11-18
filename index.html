@@ -57,13 +57,17 @@
             autocomplete="tel"
             required
             pattern="^\+?[0-9\s\-()]{7,20}$"
-            title="Enter a valid phone number (7–20 digits, may include +, spaces, -, or parentheses)"
+            title="Enter a valid phone number"
+            aria-describedby="phone-hint"
           />
+          <span class="hint" id="phone-hint"
+            >Enter your full mobile number including the country code</span
+          >
         </div>
 
         <!-- Password -->
         <div class="form-group">
-          <label for="password" class="required" >Password</label>
+          <label for="password" class="required">Password</label>
           <input
             type="password"
             id="password"
@@ -92,8 +96,12 @@
             autocomplete="new-password"
             required
             minlength="8"
+            aria-describedby="confirm-hint"
             title="Re-enter the same password"
           />
+          <span class="hint" id="confirm-hint"
+            >Must match the password entered above</span
+          >
         </div>
 
         <!-- Date of Birth -->
@@ -115,7 +123,12 @@
         <!-- Study Program -->
         <div class="form-group">
           <label for="program" class="required">Study Program</label>
-          <select id="program" name="program" required>
+          <select
+            id="program"
+            name="program"
+            required
+            aria-describedby="program-hint"
+          >
             <option value="" disabled selected>Select</option>
             <option value="software-engineering">
               Software Technology Engineering
@@ -123,6 +136,9 @@
             <option value="design">Graphic Storytelling</option>
             <option value="marketing">Character Animation</option>
           </select>
+          <span class="hint" id="program-hint"
+            >Choose your primary area of study</span
+          >
         </div>
 
         <!-- Campus Location -->
@@ -169,6 +185,7 @@
             aria-label="Other campus location"
             title="Enter your campus city or location"
           />
+          <span class="hint">Select the campus you will be attending</span>
         </fieldset>
 
         <!-- Activity Interests -->
@@ -191,6 +208,7 @@
               <span>Other</span>
             </label>
           </div>
+          <span class="hint">Helps us suggest relevant student clubs</span>
         </fieldset>
 
         <!-- How social are you? -->
@@ -225,7 +243,7 @@
         </div>
 
         <!-- Short Bio -->
-        <div class="form-group">
+        <div class="form-group full-width">
           <label for="bio">
             Short Bio <span class="optional">(optional)</span>
           </label>
@@ -240,7 +258,7 @@
         </div>
 
         <!-- Upload photo -->
-        <div class="form-group">
+        <div class="form-group full-width">
           <label for="photo">
             Upload photo <span class="optional">(optional)</span>
           </label>
@@ -256,17 +274,26 @@
         </div>
 
         <!-- Terms & Conditions -->
-        <div class="form-group">
-          <label class="checkbox-label terms-checkbox"> <input type="checkbox" id="terms" name="terms" required ... />
-  
+        <div class="form-group full-width">
+          <label class="checkbox-label terms-checkbox">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              required
+              title="You must agree to the Terms & Conditions"
+            />
             <span class="required">
-              I agree to the <a href="#" class="terms-link">Terms & Conditions</a>
+              I agree to the
+              <a href="#" class="terms-link">Terms & Conditions</a>
             </span>
           </label>
         </div>
 
         <!-- Submit Button -->
-        <button type="submit" class="submit-btn">Create Account</button>
+        <button type="submit" class="submit-btn full-width">
+          Create Account
+        </button>
       </form>
     </div>
   </body>
