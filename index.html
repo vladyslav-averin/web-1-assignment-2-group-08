@@ -17,7 +17,7 @@
       <form action="#">
         <!-- Full name -->
         <div class="form-group">
-          <label for="fullname">Full name</label>
+          <label for="fullname" class="required">Full name</label>
           <input
             type="text"
             id="fullname"
@@ -33,7 +33,7 @@
 
         <!-- VIA Email -->
         <div class="form-group">
-          <label for="email">VIA Email</label>
+          <label for="email" class="required">VIA Email</label>
           <input
             type="email"
             id="email"
@@ -48,7 +48,7 @@
 
         <!-- Phone Number -->
         <div class="form-group">
-          <label for="phone">Phone Number</label>
+          <label for="phone" class="required">Phone Number</label>
           <input
             type="tel"
             id="phone"
@@ -63,7 +63,7 @@
 
         <!-- Password -->
         <div class="form-group">
-          <label for="password">Password</label>
+          <label for="password" class="required" >Password</label>
           <input
             type="password"
             id="password"
@@ -83,7 +83,7 @@
 
         <!-- Confirm password -->
         <div class="form-group">
-          <label for="confirm">Confirm password</label>
+          <label for="confirm" class="required">Confirm password</label>
           <input
             type="password"
             id="confirm"
@@ -98,7 +98,7 @@
 
         <!-- Date of Birth -->
         <div class="form-group">
-          <label for="dob">Date of Birth</label>
+          <label for="dob" class="required">Date of Birth</label>
           <input
             type="date"
             id="dob"
@@ -114,7 +114,7 @@
 
         <!-- Study Program -->
         <div class="form-group">
-          <label for="program">Study Program</label>
+          <label for="program" class="required">Study Program</label>
           <select id="program" name="program" required>
             <option value="" disabled selected>Select</option>
             <option value="software-engineering">
@@ -127,7 +127,7 @@
 
         <!-- Campus Location -->
         <fieldset class="form-group campus-group">
-          <legend>Campus Location</legend>
+          <legend class="required">Campus Location</legend>
           <div class="radio-group">
             <label class="radio-label">
               <input
@@ -257,17 +257,10 @@
 
         <!-- Terms & Conditions -->
         <div class="form-group">
-          <label class="checkbox-label terms-checkbox">
-            <input
-              type="checkbox"
-              id="terms"
-              name="terms"
-              required
-              title="You must agree to the Terms & Conditions"
-            />
-            <span>
-              I agree to the
-              <a href="#" class="terms-link">Terms & Conditions</a>
+          <label class="checkbox-label terms-checkbox"> <input type="checkbox" id="terms" name="terms" required ... />
+  
+            <span class="required">
+              I agree to the <a href="#" class="terms-link">Terms & Conditions</a>
             </span>
           </label>
         </div>
